@@ -1,0 +1,209 @@
+/* ==========================================================================
+   Reset & Elemen Dasar
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333333;
+  background-color: #f4f6f9;
+}
+
+/* ==========================================================================
+   Header & Nav Styling (Sesuai Diagram)
+   ========================================================================== */
+header {
+  background-color: #1e293b;
+  color: #ffffff;
+  padding: 2rem 0 1rem 0;
+}
+
+.header-banner {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.header-banner h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-banner p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+}
+
+/* Navigasi di dalam Header */
+nav {
+  background-color: #0f172a;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid #334155;
+  border-bottom: 1px solid #334155;
+}
+
+.nav-links {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center; /* Meratakan menu ke tengah */
+}
+
+.nav-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+.nav-links a.highlight-link {
+  color: #38bdf8;
+  border: 1px solid #38bdf8;
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+}
+
+.nav-links a.highlight-link:hover {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   Main Layout (Flexbox Utama)
+   ========================================================================== */
+.main-container {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  
+  /* Flexbox untuk menyejajarkan #content dan aside secara horizontal */
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+/* Pembungkus Artikel (Sesuai Diagram) */
+#content {
+  flex: 3; /* Mengambil ruang 3 kali lebih besar */
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Memberikan jarak antar elemen <article> */
+}
+
+/* ==========================================================================
+   Article Styling
+   ========================================================================== */
+.content-article {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.content-article h2 {
+  color: #1e293b;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.meta-date {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 1.2rem;
+}
+
+.content-article p {
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* ==========================================================================
+   Aside Styling (Profil)
+   ========================================================================== */
+.profile-aside {
+  flex: 1; /* Mengambil ruang 1 bagian */
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  height: fit-content; /* Sesuai tinggi konten di dalamnya */
+}
+
+.profile-aside h3 {
+  color: #1e293b;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 0.5rem;
+}
+
+.profile-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #cbd5e1;
+}
+
+.bio-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.bio-table th, .bio-table td {
+  padding: 0.4rem;
+  text-align: left;
+}
+
+.bio-table th {
+  color: #64748b;
+  width: 35%;
+}
+
+.aside-quote {
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #64748b;
+  border-top: 1px dashed #e2e8f0;
+  padding-top: 0.8rem;
+}
+
+/* ==========================================================================
+   Footer Styling
+   ========================================================================== */
+footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   Responsive Mobile View (Layar Lebar <= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column; /* Mengubah susunan menjadi bertumpuk vertikal */
+  }
+  
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
